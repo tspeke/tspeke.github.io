@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- declares the document as HTML -->
+<html lang="en"> <!-- Root element -->
+<head> <!-- Contains metadata, title and stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: HTML Boilerplate</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional if using a CSS file -->
+</head>
+<body> <!-- Visible content -->
+    <header>
+        <h1>HTML Course Notes</h1>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="lesson1-html_attributes.html">Previous Lesson</a> |
+            <a href="lesson3.html">Next Lesson</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <hr>
+            <h3>HTML Boilerplate</h3>
+            <h4>The link element</h4>
+            <p>The link element is used to link to <b>external sources</b> such as stylesheets and site icons.For example here is the syntax for a link to an external CSS file:</p>
+            <code>&lt;link rel="stylesheet" href="./styles.css" /&gt;</code>
+            <p>The meaning of each part are as follows:</p>
+            <ul>
+                <li><code>rel</code> : Attribute specifying relationship between linked document and HTML document
+                    <ul>
+                        <li>In this case specified linked document is of "spreadsheet" type</li>
+                        <li>It is considered best practice to keep your HTML and CSS files separate then link the CSS file to the HTML document</li>
+                    </ul>
+                </li>
+                <li><code>href</code> : Attribute specifying the location of the URL for the external resource</li>
+                <li><code>./</code> : The dot followed by a forward slash in the example tells the computer to look in the current folder for the styles.css file</li>
+                <li>The <code>link</code> element should be put inside the <code>head</code> element</li>
+            </ul>
+            <p>Often link to external fonts, stylsheets and icons. Google Fonts is a set of free and open source custom fonts. You can choose which fonts you'd like to use and then Google will provide the necessary HTML and CSS code:</p>
+            
+            <pre><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com" /&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet" /&gt;</code></pre>
+            <p>Here <code>"preconnect"</code> : Value for the <code>rel</code> attribute tells browser to make an early connection to the link in the <code>href</code> attribute</li>
+            <p>Another common use of the  element is linking to a <b>favicon</b>:</p>
+            <code>&lt;link rel="icon" href="favicon.ico" /&gt;</code>
+            <p>A favicon is a small icon typically displayed next to the browser tab next to the page name</p>
+            
+            <h4>Introduction of HTML Boilerplate</h4>
+            <p>A boilerplate is a ready-made template for a webpage. A boilerplate contains the basic structure and essential elements every HTML document needs. It saves time and ensures pages are set up properly.</p>
+            <p>Here is an example boilerplate:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+        &lt;title&gt;freeCodeCamp&lt;/title&gt;
+        &lt;link rel="stylesheet" href="./styles.css" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>Breaking it down...</p>
+            <ul>
+                <li><code>DOCTYPE</code> declaration : Tells browser which version of HTML you are using</li>
+                <li><code>html</code> tag : Wraps around all content specifying the coding language of the contents</li>
+                <li><code>head</code> section : Contains behind-the-scenes information including metadata and page formatting details. <code>head</code> contains:
+                    <ul>
+                        <li><code>meta</code> element : Has details and is how other websites preview the page's link</li>
+                        <li><code>title</code> element : Specifies the text which will appear in the tab</li>
+                        <li><code>link</code> element : Link external spreadsheets and icons</li>
+                    </ul>
+                </li>
+                <li><code>body</code> section : Where all the page content goes
+            </ul>
+            <p>The boilerplate ensures pages are structured correctly, work accross multiple platforms (browsers) and avoid common mistakes by following best practices. Can customise the boilerplate to meet specific needs of a page.</p>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="lesson1-html_attributes.html">Previous Lesson</a> |
+            <a href="lesson3.html">Next Lesson</a>
+        </nav>
+        <p>&copy; 2026 Tom Speke</p>
+    </footer>
+</body>
+</html>
