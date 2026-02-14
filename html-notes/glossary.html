@@ -85,6 +85,49 @@
                     </ul>
                 </li>
             </section>
+
+            <section>
+                <h2>Target, Links and Paths</h2>
+                <li><code>target</code> : Attribute on anchor and link elements. Tells the browser where to open the URL for the element.
+                    <ul>
+                        <li>There are four possible values for the attribute:</li>
+                        <li><code>_self</code> : Default value. Opens link in the current "browsing context" (i.e. current tab and window)</li>
+                        <li><code>_blank</code> : Opens link in a new "browsing context" --&gt; Typically a new tab but for some browser configurations will be a new window</li>
+                        <li><code>_parent</code> : Opens link in parent of current context. E.g. if opening a link from an <code>iframe</code> --&gt; <code>_parent</code> would open the link in the tab not in the embedded frame</li>
+                        <li><code>_top</code> : Opens link in the top-most "browsing context". E.g. will open in full browser tab/window even if nested in embedded frames</li>
+                    </ul>
+                </li>
+                <li>"Absolute Path" : Complete link to a resource relative to the root of the directory. Also includes the "Protocol" i.e. <code>http</code>, <code>https</code> or <code>file</code> for locally stored data - these are all followed by <code>__://</code>. As well as the file and domain names</li>
+                <li>"Relative Path" : Specifies the location of a file relative to the directory of the current file</li>
+                <li>General Rules for which to Use:
+                    <ul>
+                        <li>Absolute when linking to resources hosted on external website</li>
+                        <li>Absolute when want link to a page or resource to work consistently regardless of document location within site</li>
+                        <li>Relative when linking to resources within same website</li>
+                        <li>Relative to keep code cleaner during development</li>
+                        <li>Relative during local testing to ensure links work without internet connection</li>
+                    </ul>
+                </li>
+                <li>Path Syntax:
+                    <ul>
+                        <li><code>/</code> or <code>\</code> (dependant on OS) : "Path Separator". Indicates subsequent files are held within previous folder locations</li>
+                        <li><code>.</code> : Single dot points to --&gt; Current directory</li>
+                        <li><code>..</code> : Double dot points to --&gt; Parent directory</li>
+                    </ul>
+                </li>
+                <li><code>&lt;a&gt;</code> : "Anchor" element --&gt; when clicked takes user to specified URL
+                <ul>
+                    <li><code>href</code> : </li>
+                    <li><code>target</code> : </li>
+                    <li><code>:link</code> : Default state representing a link the user has not yet interacted with</li>
+                    <li><code>:visited</code> : State which applies when the user has already visited the page being linked to</li>
+                    <li><code>:hover</code> : State which applies when the user is hovering their cursor over the link</li>
+                    <li><code>:focus</code> : State which applies when we focus on a link i.e. using the <code>tab</code> key</li>
+                    <li><code>:active</code> : State which applies when the link is being activated by the user. Usually corresponding to left clicking on link</li>
+                    <li>When using these states to style links there is a specific order you must write your CSS in: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:focus</code> then <code>:active</code></li>
+                </ul>
+            </li>
+            </section>
             
             
             <section>
