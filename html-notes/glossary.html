@@ -44,6 +44,8 @@
                 <li>HTML Boilerplate : Includes the basic structure and essential elements every HTML document needs</li>
             </section>
 
+            <hr>
+
             <section>
                 <h2>Audio and Videos</h2>
                 <li><code>&lt;audio&gt;</code> : Inserts sound content into HTML document. Supports .mp3, .wav and .ogg
@@ -65,6 +67,8 @@
                     </ul>
                 </li>
             </section>
+
+            <hr>
 
             <section>
                 <h2>Scalable Vector Graphic Images</h2>
@@ -96,6 +100,8 @@
                 <li>Useful library for icons is "Font Awesome" which provide SVG images for their icons</li>
             </section>
 
+            <hr>
+
             <section>
                 <h2>Embedding External Objects</h2>
                 <li><code>&lt;iframe&gt;</code> : "inline frame" used to embed other HTML content directly within a HTML page
@@ -112,6 +118,8 @@
                     </ul>
                 </li>
             </section>
+
+            <hr>
 
             <section>
                 <h2>Target, Links and Paths</h2>
@@ -155,6 +163,8 @@
                     </ul>
                 </li>
             </section>
+
+            <hr>
             
             <section>
                 <h2>Semantic HTML</h2>
@@ -197,8 +207,79 @@
                 </li>
             </section>
 
+            <hr>
+
             <section>
-                <h2>___</h2>
+                <h2>HTML Forms</h2>
+                <li><code>&lt;form&gt;</code> : Creates an HTML form for user input
+                    <ul>
+                        <li><code>action</code> : Specifies URL where form data should be sent once submitted</li>
+                        <li><code>method</code> : Specifies HTTP method to use when sending form data. Most common methods being <code>GET</code> and <code>POST</code></li>
+                    </ul>
+                </li>
+                <li><code>&lt;input&gt;</code> : Void element that creates an input field for user input
+                    <ul>
+                        <li><code>type</code> : Specifies type of input field. E.g:
+                            <ul>
+                                <li><code>text</code> : </li>
+                                <li><code>email</code> : </li>
+                                <li><code>number</code> : </li>
+                                <li><code>radio</code> : </li>
+                                <li><code>checkbox</code> : </li>
+                                <li><code>textarea</code> : </li>
+                                <li><code>button</code> : </li>
+                            </ul>
+                        </li>
+                        <li><code>placeholder</code> : Displays text hinting at what user should type into input field</li>
+                        <li><code>value</code> : Used to specify the value of the input</li>
+                        <li><code>name</code> : Assigns a name to the input field serving as the heading key when the data is submitted. For radio buttons, assigning the same name allows only one to be selected at once</li>
+                        <li><code>size</code> : Defines the number of characters that should be visable as user types into input (i.e. the size of the input box)</li>
+                        <li><code>min</code> : Can be used with input types such as <code>number</code> to specify the minimum value allowed in the input field</li>
+                        <li><code>max</code> : Can be used with input types such as <code>number</code> to specify the maximum value allowed in the input field</li>
+                        <li><code>minlength</code> : Specifies the minimum number of characters required in input field</li>
+                        <li><code>maxlength</code> : Specifies the maximum number of characters allowed in input field</li>
+                        <li><code>required</code> : Boolean attribute specifying that input field must be filled before form can be submitted</li>
+                        <li><code>disabled</code> : Boolean attribute specifying that input field should be disabled</li>
+                        <li><code>readonly</code> : Boolean attribute specifying input field is read-only</li>
+                    </ul>
+                </li>
+                <li><code>&lt;label&gt;</code> : Creates a label for an input field
+                    <ul>
+                        <li><code>for</code> : Specifies which input field the label is for</li>
+                        <li>Implicit form association is where inputs can be associated with labels by wrapping the input field inside the label element</li>
+                        <li>Explicit form association is where inputs are associated to corresponding labels using the <code>for</code> attribute on the <code>label</code> element and <code>id</code> attribute on the <code>input</code> element</li>
+                    </ul>
+                </li>
+                <li><code>&lt;button&gt;</code> : Creates a clickable button
+                    <ul>
+                        <li><code>type</code> : Controls the behaviour of the button when activated. E.g:
+                            <ul>
+                                <li><code>submit</code> : Submits the form</li>
+                                <li><code>reset</code> : Resets all fields in the form</li>
+                                <li><code>button</code> : Can program alternate functions by linking to Java Script</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><code>&lt;fieldset&gt;</code> : Groups related inputs together</li>
+                <li><code>&lt;legend&gt;</code> : Adds a caption to describe the group of inputs</li>
+                <li><code>Focused State</code> : State of the input field when it is currently selected by the user</li>
+
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>HTML Tables</h2>
+                <li><code>&lt;table&gt;</code> : Creates an HTML table</li>
+                <li><code>&lt;thead&gt;</code> : Groups the header content in an HTML table</li>
+                <li><code>&lt;tbody&gt;</code> : Groups the body content in an HTML table</li>
+                <li><code>&lt;tfoot&gt;</code> : Groups the footer content in an HTML table</li>
+                <li><code>&lt;tr&gt;</code> : Creates a row</li>
+                <li><code>&lt;th&gt;</code> : Creates a header cell</li>
+                <li><code>&lt;td&gt;</code> : Creates a data cell</li>
+                <li><code>&lt;caption&gt;</code> : Adds a title</li>
+                <li><code>colspan</code> : Attribute specifying the number of columns a table cell should span</li>
             </section>
 
             <li><code>&lt;___&gt;</code> : ___</li>
