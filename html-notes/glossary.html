@@ -143,28 +143,58 @@
                     </ul>
                 </li>
                 <li><code>&lt;a&gt;</code> : "Anchor" element --&gt; when clicked takes user to specified URL
-                <ul>
-                    <li><code>href</code> : </li>
-                    <li><code>target</code> : </li>
-                    <li><code>:link</code> : Default state representing a link the user has not yet interacted with</li>
-                    <li><code>:visited</code> : State which applies when the user has already visited the page being linked to</li>
-                    <li><code>:hover</code> : State which applies when the user is hovering their cursor over the link</li>
-                    <li><code>:focus</code> : State which applies when we focus on a link i.e. using the <code>tab</code> key</li>
-                    <li><code>:active</code> : State which applies when the link is being activated by the user. Usually corresponding to left clicking on link</li>
-                    <li>When using these states to style links there is a specific order you must write your CSS in: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:focus</code> then <code>:active</code></li>
-                </ul>
-            </li>
+                    <ul>
+                        <li><code>href</code> : </li>
+                        <li><code>target</code> : </li>
+                        <li><code>:link</code> : Default state representing a link the user has not yet interacted with</li>
+                        <li><code>:visited</code> : State which applies when the user has already visited the page being linked to</li>
+                        <li><code>:hover</code> : State which applies when the user is hovering their cursor over the link</li>
+                        <li><code>:focus</code> : State which applies when we focus on a link i.e. using the <code>tab</code> key</li>
+                        <li><code>:active</code> : State which applies when the link is being activated by the user. Usually corresponding to left clicking on link</li>
+                        <li>When using these states to style links there is a specific order you must write your CSS in: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:focus</code> then <code>:active</code></li>
+                    </ul>
+                </li>
             </section>
             
             <section>
-                <h2>HTML Semantics</h2>
-                <ul>
-                    <li>Most HTML elements have structural meaning. CSS is used for visual enhancements</li>
-                    <li><code>&lt;dl&gt;</code> : Container element for a description list. Nested inside would have:
-                    <li><code>&lt;dt&gt;</code> : Terms</li>
-                    <li><code>&lt;dd&gt;</code> : Corresponding details --&gt; Indented by default</li>
-                    <li>Description lists are useful whenever have two related pieces of information in a key--pair format.</li>
-                </ul>
+                <h2>Semantic HTML</h2>
+                <li>Most HTML elements have structural and contextual meaning. CSS is used for visual enhancements</li>
+                <li><code>&lt;dl&gt;</code> : Container element for a description list. Nested inside would have:
+                <li><code>&lt;dt&gt;</code> : Terms</li>
+                <li><code>&lt;dd&gt;</code> : Corresponding details --&gt; Indented by default</li>
+                <li>Description lists are useful whenever have two related pieces of information in a key--pair format.</li>
+                <li>Semantic HTML Elements:
+                    <ul>
+                        <li><code>&lt;header&gt;</code> : Header section of a document (different from <code>&lt;head&gt;</code> section!)</li>
+                        <li><code>&lt;main&gt;</code> : Main content of web page</li>
+                        <li><code>&lt;section&gt;</code> : Used to divide content into sections</li>
+                        <li><code>&lt;nav&gt;</code> : Section containing navigational links</li>
+                        <li><code>&lt;figure&gt;</code> : Contains images, illustrations and diagrams</li>
+                        <li><code>&lt;em&gt;</code> : Marks text that has stress emphasis</li>
+                        <li><code>&lt;i&gt;</code> : "Idiomatic text" highlights alternative voice, another language, technical terms and thoughts</li>
+                        <li><code>&lt;strong&gt;</code> : Highlights text of strong importance E.g. Warnings</li>
+                        <li><code>&lt;b&gt;</code> : Bring attention to text E.g. highlighting key words or product names</li>
+                        <li><code>&lt;blockquote&gt;</code> : Used to represent lengthy quotation
+                            <ul>
+                                <li><code>cite</code> : Attribute giving URL of source</li>
+                            </ul>
+                        </li>
+                        <li><code>&lt;cite&gt;</code> : Used to reference work visually</li>
+                        <li><code>&lt;q&gt;</code> : Inline quotation</li>
+                        <li><code>&lt;abbr&gt;</code> : Represents an abbreviation or acronym
+                            <ul>
+                                <li><code>title</code> : Includes the full unabreviated meaning</li>
+                            </ul>
+                        </li>
+                        <li><code>&lt;address&gt;</code> : ___</li>
+                        <li><code>&lt;time&gt;</code> : ___</li>
+                        <li><code>&lt;sup&gt;</code> : Superscript</li>
+                        <li><code>&lt;sub&gt;</code> : Subscript</li>
+                        <li><code>&lt;code&gt;</code> : Inline code</li>
+                        <li><code>&lt;pre&gt;</code> : Preformatted text</li>
+                        <li><code>&lt;u&gt;</code> : ___</li>
+                    </ul>
+                </li>
             </section>
 
             <section>
