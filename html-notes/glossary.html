@@ -302,6 +302,114 @@
                 <li><code>colspan</code> : Attribute specifying the number of columns a table cell should span</li>
             </ul>
         </section>
+        
+        <!--CSS-->
+
+        <hr>
+
+        <h1>CSS</h1>
+        
+        <section>
+            <h2>Basics</h2>
+
+            <ul>
+                <li>CSS Rules are each composed of two main parts:
+                    <ul>"Selector" : Identifies the HTML elements the rule should be applied to</ul>
+                    <ul>"Declaration block" : Defines the set of styles to be applied</ul>
+                </li>
+                <li>The general syntax of a CSS rule is:</li>
+                <li><pre><code>selector {
+    property: value;
+}</code></pre></li>
+                <li>CSS can be written in different locations wrt the HTML document:
+                    <ul>
+                        <li>Inline CSS : Written directly within an HTML element using the <code>style</code> attribute. Not normally used since better practice to keep HTML and CSS code separate</li>
+                        <li>Internal CSS : Written between the <code>&lt;style&gt;</code> tags inside the <code>&lt;head&gt;</code> section of the HTML document</li>
+                        <li>External CSS : Written in a separate CSS file and linked to HTML document using the <code>&lt;link&gt;</code> element in the <code>&lt;head&gt;</code> section</li>
+                    </ul>
+                </li>
+                <li>Commonly used "Properties" that can be set in the "Declaration block" part of a CSS rule include:
+                    <ul>
+                        <li><code>width</code> : Specifies the width of an element. If unspecifed the default is set to <code>auto</code> letting the browser determine width based on content and parent</li>
+                        <li><code>height</code> : Similar for height</li>
+                        <li><code>min-width</code> and <code>min-height</code> : Specifies the minimum width for an element</li>
+                        <li><code>max-width</code> and <code>max-height</code> : Specifies the maximum width for an element</li>
+                        <li><code>margin</code> : Specifies space outside an element between its border and surrounding elements.
+                            <ul>
+                                <li>Shorthand : Specify 1-4 values to set the margin on each side. If 4 values used, order is <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>.</li>
+                            </ul>
+                        </li>
+                        <li><code>padding</code> : Specifies space inside the element between the content and the border.
+                            <ul>
+                                <li>Has similar shorthand to the <code>margin</code> property</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>"Combinators" : More complex "Selectors" that have additional conditions about when the CSS rule applies based on context of the element.</li>
+                <li>Types of CSS Combinators include:
+                    <ul>
+                        <li>"Descendant Combinator", <code> </code> : Used to select elements that are descendants of a specified element. Has syntax:
+                            <ul>
+                                <li><code>parent child</code></li>
+                            </ul>
+                        </li>
+                        <li>"Child Combinator", <code>&gt;</code> : Used to select elements that are direct children of a specified parent element. Has syntax:
+                            <ul>
+                                <li><code>parent > direct-child</code></li>
+                            </ul>
+                        </li>
+                        <li>"Next-sibling Combinator", <code>+</code> : Used to select an element that immediately follows a specified sibling element. Has syntax:
+                            <ul>
+                                <li><code>sibling + next-sibling</code></li>
+                            </ul>
+                        </li>
+                        <li>"Subsequent-sibling Combinator", <code>~</code> : Used to select all siblings of a specified element that come after it. Has syntax:
+                            <ul>
+                                <li><code>sibling ~ subsequent-siblings</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Specificity and Inheritance</h2>
+
+            <ul>
+                <li>Elements can be targetted for formatting by a variety of identifiers.</li>
+                <li>These identifiers have a hierarchy of priority based on Specificity. Identifiers with a higher specificity overrule less specific identifiers</li>
+                <li>The specificity hierarchy is as follows:
+                    <ol>
+                        <li><code>!important</code> : Keyword that gives a style rule the highest priority overriding any other declarations for the given property</li>
+                        <li>Inline CSS Specificity : Specificity value = <code>(1,0,0,0)</code> : Highest specificity since applied directly to element</li>
+                        <li>Internal and External CSS Specificity : Specificity value dependant on "Selector" : Internal CSS acts with same priority as External CSS just effectively is applied last (so would take effect if Selectors of equal Selectivity value were chosen)</li>
+                        <li>Selector Specificities:
+                            <li>ID Selectors : Specificity value = <code>(0,1,0,0)</code> : Select target elements based on the unique ID attribute of an element. Defined using a hashtag <code>#</code></li>
+                            <li>Class Selectors : Specificity value = <code>(0,0,1,0)</code> : Select target elements based on class attribute of elements. Defined using a full stop <code>.</code></li>
+                            <li>Type Selectors : Specificity value = <code>(0,0,0,1)</code> : Select target elements based on their tag name</li>
+                            <li>Universal Selector, <code>*</code> : Specificity value = <code>(0,0,0,0)</code> : Special CSS selector that matches any element in the HTML document</li>
+                        </li>
+                    </ol>
+                </li>
+                <li>The "Cascade Algorithm" is the method a browser will follow in deciding which CSS style to apply to an element. It follows the following:
+                    <ol>
+                        <li>Relevance : Browser filters all CSS rules to consider only those that are actually relevant to the element in question</li>
+                        <li>Media Query : Browser finds information relevant to apply styles based on characteristics of device or viewport E.g. width, height, orientation</li>
+                        <li>Importance : Browser checks which of relevant CSS rules takes priority. The browser follows the following:
+                            <ul>
+                                <li><code>!important</code> : Takes immediate priority</li>
+                                <li>Specificity : Following specificity hierarchy outlined above</li>
+                                <li>Order of Appearance : If specificity is equal, CSS rule that appears last in .css file will be applied</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><code>inherit</code> : Keyword that can be used to force a child element to inherit a specified property of its parent</li>
+            </ul>
+            
+        </section>
 
             <li><code>&lt;___&gt;</code> : ___</li>
             <li><code>&lt;___&gt;</code> : ___</li>
