@@ -57,5 +57,6 @@ L_test_str = [
 ]
 
 for test_str in L_test_str:
+    print()
     print(test_str)
     print(smallest_gap(test_str))
