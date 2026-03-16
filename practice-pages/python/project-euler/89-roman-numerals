@@ -1,0 +1,64 @@
+import os
+
+script_dir = os.path.dirname(__file__)
+path = os.path.join(script_dir, "89-roman.txt") # finding the path between python script --> txt file
+
+with open(path) as f:
+    L_rom = f.read().split()
+
+#####################################################################################################
+
+# Add in combinations!
+ROM_DEC = {"M":1000, "CM":900, "D":500, "CD":400, "C":100, "XC":90, "L":50, "XL":40, "X":10, "IX":9, "V":5, "IV":4, "I":1}
+
+# Writes the number in decimal, n --> best form of roman numerals
+# Follows a Greedy type algorithm
+def minimal_form(n):
+    L_amount = []
+    residue = n
+    for value in ROM_DEC.values():
+        amount = residue // value
+        residue = residue % value
+        L_amount.append(amount)
+    
+    str = ""
+    L_ROM = list(ROM_DEC.keys())
+    for i, amount in enumerate(L_amount):
+        for _ in range(amount):
+            str += L_ROM[i]
+    
+    return str
+
+def rom_to_dec(rom):
+    dec = 0
+    converting = True
+    while converting:
+
+        # Think greedy algorithm will actually find subtractive terms before adding incorrectly
+        for k, v in ROM_DEC.items():
+            if rom.startswith(k):
+                dec += v
+                rom = rom[len(k):]
+
+        if len(rom) == 0:
+            converting = False
+
+    return dec
+
+#####################################################################################################
+
+print(minimal_form(99))
+
+saved_chars = 0
+L_minimal_rom = []
+for rom in L_rom:
+    
+    # Conversion
+    dec = rom_to_dec(rom)
+    minimal_rom = minimal_form(dec)
+    L_minimal_rom.append(minimal_rom)
+
+    # Counting difference in lengths
+    saved_chars += len(rom) - len(minimal_rom)
+
+print(saved_chars)
