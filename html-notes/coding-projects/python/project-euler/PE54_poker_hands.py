@@ -6,7 +6,7 @@ value_map = {
 L_suits = ['S', 'H', 'D', 'C']
 
 script_dir = os.path.dirname(__file__)
-path = os.path.join(script_dir, "54-poker.txt") # finding the path between python script --> txt file
+path = os.path.join(script_dir, "PE54_poker.txt") # finding the path between python script --> txt file
 
 with open(path) as f:
     for line in f:

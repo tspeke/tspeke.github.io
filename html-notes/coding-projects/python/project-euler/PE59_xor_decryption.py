@@ -1,7 +1,7 @@
 import os
 
 script_dir = os.path.dirname(__file__)
-path = os.path.join(script_dir, "59-cipher.txt") # finding the path between python script --> txt file
+path = os.path.join(script_dir, "PE59_cipher.txt") # finding the path between python script --> txt file
 
 with open(path) as f:
     L_code = f.read().split(",")

@@ -1,7 +1,7 @@
 import os
 
 script_dir = os.path.dirname(__file__)
-path = os.path.join(script_dir, "89-roman.txt") # finding the path between python script --> txt file
+path = os.path.join(script_dir, "PE89_roman.txt") # finding the path between python script --> txt file
 
 with open(path) as f:
     L_rom = f.read().split()

@@ -252,11 +252,7 @@ class reactor():
             t_span=W_span, 
             y0=y0, 
             method='Radau', 
-            t_eval=eval_points,
-            rtol=1e-8,
-            atol=1e-10,
-            max_step=5.0
-        )
+            t_eval=eval_points)
         
         # Access the solution components
         W = solution.t
@@ -412,10 +408,10 @@ r_wgs_copper_zinc = reaction(D_stoich={"CH4":0, "H2O":-1, "CO2":+1, "CO":-1, "H2
 # --- Define Inlet to Area ---
 
 # Molar flowrates (in kmol/h) from Aspen stream tables
-input_molar_flows = {"CH4": 0.57, "H2O": 1.50, "CO2": 12.83, "CO": 87.59, "H2": 189.83, "AR": 1.86}
+input_molar_flows = {"CH4": 1.35, "H2O": 0.0, "CO2": 11.73, "CO": 98.04, "H2": 204.57, "AR": 2.04}
 
 # Add H2O for stoichiometry adjustment (e.g., 100 kmol/h) before creating the stream
-input_molar_flows["H2O"] += 100
+input_molar_flows["H2O"] += 225
 
 s_ht_wgs_in = stream(T=270+273.15, P=28, D_mole_flows=input_molar_flows)
 
@@ -498,21 +494,37 @@ def run_plant(T_ht, P_ht, W_ht, T_lt, W_lt, n_water_add):
 print("\nStarting Sensitivity Analysis...")
 
 # Base case values
-base_T_ht = 270 + 273.15
-base_P_ht = 28
-base_W_ht = 2000
-base_T_lt = 180 + 273.15
-base_W_lt = 2000
-base_n_water = 100
+base_T_ht = 310 + 273.15
+base_P_ht = 35
+base_W_ht = 1500
+base_T_lt = 225 + 273.15
+base_W_lt = 1500
+base_n_water = 230
+
+# --- Base Case Run ---
+X_base, r1_base, r2_base = run_plant(base_T_ht, base_P_ht, base_W_ht, base_T_lt, base_W_lt, base_n_water)
+
+print(f"\n--- BASE CASE RESULTS ---")
+print(f"\nHT WGS INLET:")
+print(f"  T={r1_base.inlet.T:.1f} K, P={r1_base.inlet.P/ATM_TO_PA:.2f} atm")
+print(f"\nHT WGS OUTLET:")
+print(f"  X_CO={r1_base.X[-1]:.4f}, T={r1_base.outlet.T:.1f} K, P={r1_base.outlet.P/ATM_TO_PA:.2f} atm")
+
+print(f"\nLT WGS INLET:")
+print(f"  T={r2_base.inlet.T:.1f} K, P={r2_base.inlet.P/ATM_TO_PA:.2f} atm")
+print(f"\nLT WGS OUTLET:")
+print(f"  X_CO={r2_base.X[-1]:.4f}, T={r2_base.outlet.T:.1f} K, P={r2_base.outlet.P/ATM_TO_PA:.2f} atm")
+
+print(f"\nOVERALL CONVERSION: {X_base:.4f} ({X_base*100:.2f}%)")
 
 # Parameters to vary and their ranges (tuples of: label, unit, linspace)
 tests = {
-    "T_ht": ("HT Inlet T", "K", np.linspace(250, 350, 10) + 273.15),
-    "P_ht": ("HT Inlet P", "atm", np.linspace(15, 40, 10)),
-    "W_ht": ("HT Catalyst Mass", "kg", np.linspace(100, 1000, 10)),
-    "T_lt": ("LT Inlet T", "K", np.linspace(160, 240, 10) + 273.15),
-    "W_lt": ("LT Catalyst Mass", "kg", np.linspace(100, 1000, 10)),
-    "n_water": ("Added Water", "kmol/h", np.linspace(50, 200, 10))
+    "T_ht": ("HT Inlet T", "K", np.linspace(base_T_ht - 50, base_T_ht + 50, 10)),
+    "P_ht": ("HT Inlet P", "atm", np.linspace(base_P_ht - 15, base_P_ht + 15, 10)),
+    "W_ht": ("HT Catalyst Mass", "kg", np.linspace(base_W_ht - 1000, base_W_ht + 1000, 10)),
+    "T_lt": ("LT Inlet T", "K", np.linspace(base_T_lt - 50, base_T_lt + 50, 10)),
+    "W_lt": ("LT Catalyst Mass", "kg", np.linspace(base_W_lt - 1000, base_W_lt + 1000, 10)),
+    "n_water": ("Added Water", "kmol/h", np.linspace(base_n_water + 150, base_n_water - 150, 10))
 }
 
 # Create a 2x3 grid of subplots
