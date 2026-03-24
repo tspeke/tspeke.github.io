@@ -1,0 +1,435 @@
+<!DOCTYPE html> <!-- declares the document as HTML -->
+<html lang="en"> <!-- Root element -->
+<head> <!-- Contains metadata, title and stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: HTML Attributes</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional if using a CSS file -->
+</head>
+<body> <!-- Visible content -->
+    <header>
+        <h1>Glossary of HTML Elements and their Attributes</h1>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="lesson2-html_boilerplate.html">Previous Lesson</a> |
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>HTML Basics</h2>
+            
+            <ul>
+                <li>HTML provides the backbone for a web page</li>
+                <li><code>&lt;elementName&gt;</code> : Elements are the building blocks of a HTML document. Can represent headings, paragraphs, links, images...</li>
+                <li>Some of the most common Elements:
+                    <ul>
+                        <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> : Headings</li>
+                        <li><code>&lt;p&gt;</code> : Paragraph</li>
+                        <li><code>&lt;img&gt;</code> : Image</li>
+                        <li><code>&lt;body&gt;</code> : Contains displayed content for HTML document</li>
+                        <li><code>&lt;section&gt;</code> : Divide content into sections</li>
+                        <li><code>&lt;div&gt;</code> : Generic container for holding other HTML elements</li>
+                        <li><code>&lt;a&gt;</code> : Anchor for URL links to web pages</li>
+                        <li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> : Used with <code>&lt;li&gt;</code> nested for unordered and ordered lists</li>
+                        <li><code>&lt;em&gt;</code> : Emphasis</li>
+                        <li><code>&lt;strong&gt;</code> : Strong emphasis</li>
+                        <li><code>&lt;figure&gt;</code> : Groups content including <code>&lt;figcaption&gt;</code></li>
+                        <li><code>&lt;main&gt;</code> : Main content for web page</li>
+                        <li><code>&lt;footer&gt;</code> : At end of HTML document</li>
+                        <li><code>&lt;script&gt;</code> : Embeds executable code</li>
+                    </ul>
+                </li>
+                <li><code>id</code> : "Identifiers" - Should be used only once per HTML document</li>
+                <li><code>class</code> : "Classes" - Group elements for styling and behaviour</li>
+                <li>HTML Boilerplate : Includes the basic structure and essential elements every HTML document needs</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Audio and Videos</h2>
+            
+            <ul>
+                <li><code>&lt;audio&gt;</code> : Inserts sound content into HTML document. Supports .mp3, .wav and .ogg
+                    <ul>
+                        <li><code>src</code> : Directs to location of audio file</li>
+                        <li><code>controls</code> : Adds ability to play/pause and mute audio</li>
+                        <li>Note that some browsers support different file types and may have different default settings</li>
+                        <li><code>loop</code> : Automatically restarts audio once finished</li>
+                        <li><code>muted</code> : Boolean attribute which sets audio default to be muted</li>
+                    </ul>
+                </li>
+                <li><code>&lt;source&gt;</code> : Source elements can be nested within media element. This causes the browser to select the first source that it understands</li>
+                <li><code>&lt;video&gt;</code> : Inserts video content into HTML document. Supports .mp4, .webm and .ogg
+                    <ul>
+                        <li>All attributes introduced in <code>&lt;audio&gt;</code> element are supported in <code>&lt;video&gt;</code></li>
+                        <li><code>autoplay</code> : Boolean attribute which causes video to play on loading</li>
+                        <li><code>width</code> : Sets the width of the video screen</li>
+                        <li><code>poster</code> : Displays an image with the destination given when video is downloading</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Scalable Vector Graphic Images</h2>
+            
+            <ul>
+                <li><code>&lt;svg&gt;</code> : Container for entire drawing image constructed of mathematical shape and paths elements
+                    <ul>
+                        <li><code>width</code> : </li>
+                        <li><code>height</code> : </li>
+                        <li><code>viewBox</code> : </li>
+                        <li><code>xmlns</code> : </li>
+                    </ul>
+                </li>
+                <li><code>&lt;circle&gt;</code> : Container for entire drawing image constructed of mathematical shape and paths elements
+                    <ul>
+                        <li><code>cx</code> : Centre x position</li>
+                        <li><code>cy</code> : Centre y position</li>
+                        <li><code>r</code> : Radius</li>
+                        <li><code>fill</code> : Fill colour</li>
+                        <li><code>stroke</code> : Border colour</li>
+                        <li><code>stroke-width</code> : Border width</li>
+                    </ul>
+                </li>
+                <li><code>&lt;path&gt;</code> : Container for entire drawing image constructed of mathematical shape and paths elements
+                    <ul>
+                        <li>Has similar <code>stroke-width</code>, <code>stroke</code> and <code>fill</code> attributes</li>
+                        <li><code>d</code> : </li>
+                    </ul>
+                </li>
+                <li>Useful library for icons is "Font Awesome" which provide SVG images for their icons</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Embedding External Objects</h2>
+            
+            <ul>
+                <li><code>&lt;iframe&gt;</code> : "inline frame" used to embed other HTML content directly within a HTML page
+                    <ul>
+                        <li>Content may be a video, map, other web pages...</li>
+                        <li><code>width</code></li>
+                        <li><code>height</code></li>
+                        <li><code>src</code> : URL source of external object</li>
+                        <li><code>title</code> : Text included for accessibility</li>
+                        <li><code>allow</code> : Defines what the iframe can and can't do</li>
+                        <li><code>referrerpolicy</code> : </li>
+                        <li><code>allowfullscreen</code> : Boolean attribute allowing full screen viewing</li>
+                        <li><code>style</code> : </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Target, Links and Paths</h2>
+
+            <ul>
+                <li><code>target</code> : Attribute on anchor and link elements. Tells the browser where to open the URL for the element.
+                    <ul>
+                        <li>There are four possible values for the attribute:</li>
+                        <li><code>_self</code> : Default value. Opens link in the current "browsing context" (i.e. current tab and window)</li>
+                        <li><code>_blank</code> : Opens link in a new "browsing context" --&gt; Typically a new tab but for some browser configurations will be a new window</li>
+                        <li><code>_parent</code> : Opens link in parent of current context. E.g. if opening a link from an <code>iframe</code> --&gt; <code>_parent</code> would open the link in the tab not in the embedded frame</li>
+                        <li><code>_top</code> : Opens link in the top-most "browsing context". E.g. will open in full browser tab/window even if nested in embedded frames</li>
+                    </ul>
+                </li>
+                <li>"Absolute Path" : Complete link to a resource relative to the root of the directory. Also includes the "Protocol" i.e. <code>http</code>, <code>https</code> or <code>file</code> for locally stored data - these are all followed by <code>__://</code>. As well as the file and domain names</li>
+                <li>"Relative Path" : Specifies the location of a file relative to the directory of the current file</li>
+                <li>General Rules for which to Use:
+                    <ul>
+                        <li>Absolute when linking to resources hosted on external website</li>
+                        <li>Absolute when want link to a page or resource to work consistently regardless of document location within site</li>
+                        <li>Relative when linking to resources within same website</li>
+                        <li>Relative to keep code cleaner during development</li>
+                        <li>Relative during local testing to ensure links work without internet connection</li>
+                    </ul>
+                </li>
+                <li>Path Syntax:
+                    <ul>
+                        <li><code>/</code> or <code>\</code> (dependant on OS) : "Path Separator". Indicates subsequent files are held within previous folder locations</li>
+                        <li><code>.</code> : Single dot points to --&gt; Current directory</li>
+                        <li><code>..</code> : Double dot points to --&gt; Parent directory</li>
+                        <li><code>#</code> : Sends back to current page</li>
+                    </ul>
+                </li>
+                <li><code>&lt;a&gt;</code> : "Anchor" element --&gt; when clicked takes user to specified URL
+                    <ul>
+                        <li><code>href</code> : </li>
+                        <li><code>target</code> : </li>
+                        <li><code>:link</code> : Default state representing a link the user has not yet interacted with</li>
+                        <li><code>:visited</code> : State which applies when the user has already visited the page being linked to</li>
+                        <li><code>:hover</code> : State which applies when the user is hovering their cursor over the link</li>
+                        <li><code>:focus</code> : State which applies when we focus on a link i.e. using the <code>tab</code> key</li>
+                        <li><code>:active</code> : State which applies when the link is being activated by the user. Usually corresponding to left clicking on link</li>
+                        <li>When using these states to style links there is a specific order you must write your CSS in: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:focus</code> then <code>:active</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+            
+        <section>
+            <h2>Semantic HTML</h2>
+
+            <ul>
+                <li>Most HTML elements have structural and contextual meaning. CSS is used for visual enhancements</li>
+                <li><code>&lt;dl&gt;</code> : Container element for a description list. Nested inside would have:
+                <li><code>&lt;dt&gt;</code> : Terms</li>
+                <li><code>&lt;dd&gt;</code> : Corresponding details --&gt; Indented by default</li>
+                <li>Description lists are useful whenever have two related pieces of information in a key--pair format.</li>
+                <li>Semantic HTML Elements:
+                    <ul>
+                        <li><code>&lt;header&gt;</code> : Header section of a document (different from <code>&lt;head&gt;</code> section!)</li>
+                        <li><code>&lt;main&gt;</code> : Main content of web page</li>
+                        <li><code>&lt;section&gt;</code> : Used to divide content into sections</li>
+                        <li><code>&lt;nav&gt;</code> : Section containing navigational links</li>
+                        <li><code>&lt;figure&gt;</code> : Contains images, illustrations and diagrams</li>
+                        <li><code>&lt;em&gt;</code> : Marks text that has stress emphasis</li>
+                        <li><code>&lt;i&gt;</code> : "Idiomatic text" highlights alternative voice, another language, technical terms and thoughts</li>
+                        <li><code>&lt;strong&gt;</code> : Highlights text of strong importance E.g. Warnings</li>
+                        <li><code>&lt;b&gt;</code> : Bring attention to text E.g. highlighting key words or product names</li>
+                        <li><code>&lt;blockquote&gt;</code> : Used to represent lengthy quotation
+                            <ul>
+                                <li><code>cite</code> : Attribute giving URL of source</li>
+                            </ul>
+                        </li>
+                        <li><code>&lt;cite&gt;</code> : Used to reference work visually</li>
+                        <li><code>&lt;q&gt;</code> : Inline quotation</li>
+                        <li><code>&lt;abbr&gt;</code> : Represents an abbreviation or acronym
+                            <ul>
+                                <li><code>title</code> : Includes the full unabreviated meaning</li>
+                            </ul>
+                        </li>
+                        <li><code>&lt;address&gt;</code> : ___</li>
+                        <li><code>&lt;time&gt;</code> : ___</li>
+                        <li><code>&lt;sup&gt;</code> : Superscript</li>
+                        <li><code>&lt;sub&gt;</code> : Subscript</li>
+                        <li><code>&lt;code&gt;</code> : Inline code</li>
+                        <li><code>&lt;pre&gt;</code> : Preformatted text</li>
+                        <li><code>&lt;u&gt;</code> : ___</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>HTML Forms</h2>
+
+            <ul>
+                <li><code>&lt;form&gt;</code> : Creates an HTML form for user input
+                    <ul>
+                        <li><code>action</code> : Specifies URL where form data should be sent once submitted</li>
+                        <li><code>method</code> : Specifies HTTP method to use when sending form data. Most common methods being <code>GET</code> and <code>POST</code></li>
+                    </ul>
+                </li>
+                <li><code>&lt;input&gt;</code> : Void element that creates an input field for user input
+                    <ul>
+                        <li><code>type</code> : Specifies type of input field. E.g:
+                            <ul>
+                                <li><code>text</code> : </li>
+                                <li><code>email</code> : </li>
+                                <li><code>number</code> : </li>
+                                <li><code>radio</code> : </li>
+                                <li><code>checkbox</code> : </li>
+                                <li><code>textarea</code> : </li>
+                                <li><code>button</code> : </li>
+                            </ul>
+                        </li>
+                        <li><code>placeholder</code> : Displays text hinting at what user should type into input field</li>
+                        <li><code>value</code> : Used to specify the value of the input</li>
+                        <li><code>name</code> : Assigns a name to the input field serving as the heading key when the data is submitted. For radio buttons, assigning the same name allows only one to be selected at once</li>
+                        <li><code>size</code> : Defines the number of characters that should be visable as user types into input (i.e. the size of the input box)</li>
+                        <li><code>min</code> : Can be used with input types such as <code>number</code> to specify the minimum value allowed in the input field</li>
+                        <li><code>max</code> : Can be used with input types such as <code>number</code> to specify the maximum value allowed in the input field</li>
+                        <li><code>minlength</code> : Specifies the minimum number of characters required in input field</li>
+                        <li><code>maxlength</code> : Specifies the maximum number of characters allowed in input field</li>
+                        <li><code>required</code> : Boolean attribute specifying that input field must be filled before form can be submitted</li>
+                        <li><code>disabled</code> : Boolean attribute specifying that input field should be disabled</li>
+                        <li><code>readonly</code> : Boolean attribute specifying input field is read-only</li>
+                    </ul>
+                </li>
+                <li><code>&lt;label&gt;</code> : Creates a label for an input field
+                    <ul>
+                        <li><code>for</code> : Specifies which input field the label is for</li>
+                        <li>Implicit form association is where inputs can be associated with labels by wrapping the input field inside the label element</li>
+                        <li>Explicit form association is where inputs are associated to corresponding labels using the <code>for</code> attribute on the <code>label</code> element and <code>id</code> attribute on the <code>input</code> element</li>
+                    </ul>
+                </li>
+                <li><code>&lt;button&gt;</code> : Creates a clickable button
+                    <ul>
+                        <li><code>type</code> : Controls the behaviour of the button when activated. E.g:
+                            <ul>
+                                <li><code>submit</code> : Submits the form</li>
+                                <li><code>reset</code> : Resets all fields in the form</li>
+                                <li><code>button</code> : Can program alternate functions by linking to Java Script</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><code>&lt;fieldset&gt;</code> : Groups related inputs together</li>
+                <li><code>&lt;legend&gt;</code> : Adds a caption to describe the group of inputs</li>
+                <li><code>Focused State</code> : State of the input field when it is currently selected by the user</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>HTML Tables</h2>
+
+            <ul>
+                <li><code>&lt;table&gt;</code> : Creates an HTML table</li>
+                <li><code>&lt;thead&gt;</code> : Groups the header content in an HTML table</li>
+                <li><code>&lt;tbody&gt;</code> : Groups the body content in an HTML table</li>
+                <li><code>&lt;tfoot&gt;</code> : Groups the footer content in an HTML table</li>
+                <li><code>&lt;tr&gt;</code> : Creates a row</li>
+                <li><code>&lt;th&gt;</code> : Creates a header cell</li>
+                <li><code>&lt;td&gt;</code> : Creates a data cell</li>
+                <li><code>&lt;caption&gt;</code> : Adds a title</li>
+                <li><code>colspan</code> : Attribute specifying the number of columns a table cell should span</li>
+            </ul>
+        </section>
+        
+        <!--CSS-->
+
+        <hr>
+
+        <h1>CSS</h1>
+        
+        <section>
+            <h2>Basics</h2>
+
+            <ul>
+                <li>CSS Rules are each composed of two main parts:
+                    <ul>"Selector" : Identifies the HTML elements the rule should be applied to</ul>
+                    <ul>"Declaration block" : Defines the set of styles to be applied</ul>
+                </li>
+                <li>The general syntax of a CSS rule is:</li>
+                <li><pre><code>selector {
+    property: value;
+}</code></pre></li>
+                <li>CSS can be written in different locations wrt the HTML document:
+                    <ul>
+                        <li>Inline CSS : Written directly within an HTML element using the <code>style</code> attribute. Not normally used since better practice to keep HTML and CSS code separate</li>
+                        <li>Internal CSS : Written between the <code>&lt;style&gt;</code> tags inside the <code>&lt;head&gt;</code> section of the HTML document</li>
+                        <li>External CSS : Written in a separate CSS file and linked to HTML document using the <code>&lt;link&gt;</code> element in the <code>&lt;head&gt;</code> section</li>
+                    </ul>
+                </li>
+                <li>Commonly used "Properties" that can be set in the "Declaration block" part of a CSS rule include:
+                    <ul>
+                        <li><code>width</code> : Specifies the width of an element. If unspecifed the default is set to <code>auto</code> letting the browser determine width based on content and parent</li>
+                        <li><code>height</code> : Similar for height</li>
+                        <li><code>min-width</code> and <code>min-height</code> : Specifies the minimum width for an element</li>
+                        <li><code>max-width</code> and <code>max-height</code> : Specifies the maximum width for an element</li>
+                        <li><code>margin</code> : Specifies space outside an element between its border and surrounding elements.
+                            <ul>
+                                <li>Shorthand : Specify 1-4 values to set the margin on each side. If 4 values used, order is <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>.</li>
+                            </ul>
+                        </li>
+                        <li><code>padding</code> : Specifies space inside the element between the content and the border.
+                            <ul>
+                                <li>Has similar shorthand to the <code>margin</code> property</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>"Combinators" : More complex "Selectors" that have additional conditions about when the CSS rule applies based on context of the element.</li>
+                <li>Types of CSS Combinators include:
+                    <ul>
+                        <li>"Descendant Combinator", <code> </code> : Used to select elements that are descendants of a specified element. Has syntax:
+                            <ul>
+                                <li><code>parent child</code></li>
+                            </ul>
+                        </li>
+                        <li>"Child Combinator", <code>&gt;</code> : Used to select elements that are direct children of a specified parent element. Has syntax:
+                            <ul>
+                                <li><code>parent > direct-child</code></li>
+                            </ul>
+                        </li>
+                        <li>"Next-sibling Combinator", <code>+</code> : Used to select an element that immediately follows a specified sibling element. Has syntax:
+                            <ul>
+                                <li><code>sibling + next-sibling</code></li>
+                            </ul>
+                        </li>
+                        <li>"Subsequent-sibling Combinator", <code>~</code> : Used to select all siblings of a specified element that come after it. Has syntax:
+                            <ul>
+                                <li><code>sibling ~ subsequent-siblings</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Specificity and Inheritance</h2>
+
+            <ul>
+                <li>Elements can be targetted for formatting by a variety of identifiers.</li>
+                <li>These identifiers have a hierarchy of priority based on Specificity. Identifiers with a higher specificity overrule less specific identifiers</li>
+                <li>The specificity hierarchy is as follows:
+                    <ol>
+                        <li><code>!important</code> : Keyword that gives a style rule the highest priority overriding any other declarations for the given property</li>
+                        <li>Inline CSS Specificity : Specificity value = <code>(1,0,0,0)</code> : Highest specificity since applied directly to element</li>
+                        <li>Internal and External CSS Specificity : Specificity value dependant on "Selector" : Internal CSS acts with same priority as External CSS just effectively is applied last (so would take effect if Selectors of equal Selectivity value were chosen)</li>
+                        <li>Selector Specificities:
+                            <li>ID Selectors : Specificity value = <code>(0,1,0,0)</code> : Select target elements based on the unique ID attribute of an element. Defined using a hashtag <code>#</code></li>
+                            <li>Class Selectors : Specificity value = <code>(0,0,1,0)</code> : Select target elements based on class attribute of elements. Defined using a full stop <code>.</code></li>
+                            <li>Type Selectors : Specificity value = <code>(0,0,0,1)</code> : Select target elements based on their tag name</li>
+                            <li>Universal Selector, <code>*</code> : Specificity value = <code>(0,0,0,0)</code> : Special CSS selector that matches any element in the HTML document</li>
+                        </li>
+                    </ol>
+                </li>
+                <li>The "Cascade Algorithm" is the method a browser will follow in deciding which CSS style to apply to an element. It follows the following:
+                    <ol>
+                        <li>Relevance : Browser filters all CSS rules to consider only those that are actually relevant to the element in question</li>
+                        <li>Media Query : Browser finds information relevant to apply styles based on characteristics of device or viewport E.g. width, height, orientation</li>
+                        <li>Importance : Browser checks which of relevant CSS rules takes priority. The browser follows the following:
+                            <ul>
+                                <li><code>!important</code> : Takes immediate priority</li>
+                                <li>Specificity : Following specificity hierarchy outlined above</li>
+                                <li>Order of Appearance : If specificity is equal, CSS rule that appears last in .css file will be applied</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><code>inherit</code> : Keyword that can be used to force a child element to inherit a specified property of its parent</li>
+            </ul>
+            
+        </section>
+
+            <li><code>&lt;___&gt;</code> : ___</li>
+            <li><code>&lt;___&gt;</code> : ___</li>
+
+            <li><code>&lt;___&gt;</code> : ___
+                <ul>
+                    <li><code>___</code> : </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="lesson2-html_boilerplate.html">Previous Lesson</a> |
+        </nav>
+        <p>&copy; 2026 Tom Speke</p>
+    </footer>
+</body>
+</html>
+
