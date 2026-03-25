@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Speke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">TS</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="./coding-projects">Coding</a></li>
+            <li><a href="./engineering-projects">Engineering</a></li>
+            <li><a href="./game-design-projects">Game Design</a></li>
+            <li><a href="./experience">Experience</a></li>
+            <li><a href="#" class="nav-cv" target="_blank" rel="noopener">CV ↗</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-label">
+        <span class="label-line"></span>
+        <span>University of Cambridge</span>
+    </div>
+    <h1 class="hero-title">
+        <span class="hero-name">Tom Speke</span>
+        <em class="hero-subtitle">Chemical Engineering Student</em>
+    </h1>
+    <p class="hero-desc">Building software, designing strategy games,<br>and solving engineering problems.</p>
+    <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#" class="btn-secondary" target="_blank" rel="noopener">Download CV</a>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">scroll</span>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-inner">
+        <div class="section-header">
+            <span class="section-num">01</span>
+            <h2>About</h2>
+        </div>
+        <div class="about-content">
+            <p class="about-lead">
+                I am a Chemical Engineering student at the University of Cambridge with a passion for
+                programming, simulation, and game design.
+            </p>
+            <p class="about-body">
+                I enjoy building technical projects that sit at the intersection of logical thinking
+                and creativity — whether that's modelling industrial processes, writing strategy game AI,
+                or prototyping co-operative mechanics in a 48-hour game jam.
+            </p>
+            <ul class="about-tags">
+                <li>Python</li>
+                <li>Godot</li>
+                <li>Aspen Plus</li>
+                <li>MATLAB</li>
+                <li>HTML / CSS / JS</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Highlighted Projects -->
+<section class="projects" id="projects">
+    <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Highlighted Projects</h2>
+    </div>
+
+    <div class="project-grid">
+
+        <article class="project-card" data-category="Game Design">
+            <div class="project-card-inner">
+                <span class="project-category">Game Design · Python</span>
+                <h3>Turn-Based Strategy Game</h3>
+                <p>Python strategy game featuring procedurally generated maps and rule-based AI opponents. Inspired by classic 4X design.</p>
+                <a href="#" class="project-link">View Project <span aria-hidden="true">→</span></a>
+            </div>
+        </article>
+
+        <article class="project-card" data-category="Game Jam">
+            <div class="project-card-inner">
+                <span class="project-category">Game Jam · Godot</span>
+                <h3>Co-op Survival Game</h3>
+                <p>Two-player cooperative survival game built in Godot over 48 hours. Focuses on resource management and emergent tension.</p>
+                <a href="#" class="project-link">Play Demo <span aria-hidden="true">→</span></a>
+            </div>
+        </article>
+
+        <article class="project-card" data-category="Engineering">
+            <div class="project-card-inner">
+                <span class="project-category">Engineering · Aspen Plus</span>
+                <h3>CO₂ Reactor Simulation</h3>
+                <p>Process simulation of a CO₂ to CO reactor system, exploring heat integration and conversion efficiency.</p>
+                <a href="#" class="project-link">Read More <span aria-hidden="true">→</span></a>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="projects-cta">
+        <a href="./coding-projects" class="btn-ghost">All Coding Projects</a>
+        <a href="./engineering-projects" class="btn-ghost">All Engineering Projects</a>
+        <a href="./game-design-projects" class="btn-ghost">All Game Design Projects</a>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Contact</h2>
+    </div>
+    <div class="contact-inner">
+        <p class="contact-lead">Interested in collaborating or just want to say hello?</p>
+        <a href="mailto:ts000@cam.ac.uk" class="contact-email">ts000@cam.ac.uk</a>
+        <div class="contact-links">
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Tom Speke</p>
+    <p class="footer-sub">Built by hand.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
